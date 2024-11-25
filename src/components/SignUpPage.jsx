@@ -1,7 +1,18 @@
 
 import React from 'react';
 import { Link } from "react-router-dom";
-import { useState } from 'react'
+import { useState } from 'react';
+import axios from 'axios';
+
+const API_URL = 'http://localhost:3000/auth';
+
+export const registerUser = async (data) => {
+  return axios.post(`${API_URL}/register`, data);
+};
+
+export const loginUser = async (data) => {
+  return axios.post(`${API_URL}/login`, data);
+};
 
 const SignUpPage = () => {
   const [isVisible,setIsVisible]=useState(false)
